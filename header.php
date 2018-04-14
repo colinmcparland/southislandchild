@@ -15,7 +15,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="loading-overlay">
-  <video src='/wp-content/uploads/2018/04/Loop_Small-1.mp4' autoplay loop muted playsinline poster="http://dummyimage.com/320x240/ffffff/fff"></video>
+  <video src='/wp-content/uploads/2018/04/Loop_Small-1.mp4' autoplay loop muted playsinline poster="https://dummyimage.com/320x240/ffffff/fff"></video>
   <h2>Loading...</h2>
 </div>
 <div class="wrapper">
