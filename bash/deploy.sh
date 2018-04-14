@@ -12,6 +12,8 @@ ssh tinybird.ca "
   git add -A;
   git status;
   git commit -F commitmsg;
+  git push;
+  exit;
 ";
 
 # SSH into SIC site then:
