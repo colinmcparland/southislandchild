@@ -7,7 +7,7 @@ function theme_enqueue_custom_scripts() {
   wp_register_script( 'main-script',  $theme_url.'/script/main.js', "1", true);
   wp_enqueue_script( 'main-script' );
 
-  wp_register_style('main', get_stylesheet_uri());
+  wp_register_style('main', get_stylesheet_uri(), array(), null, false);
   wp_enqueue_style('main');
 
   //  Since were using jquery slim to make bootstrap happy

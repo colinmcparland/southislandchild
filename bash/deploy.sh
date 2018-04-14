@@ -5,7 +5,7 @@ commitmsg=$1;
 #   echo commit msg to temp file
 #   commit and push
 #   remove temp file
-ssh tinybird.ca "
+ssh -t tinybird.ca "
   cd sic;
   echo $commitmsg > commitmsg;
   ls;
