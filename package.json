@@ -1,0 +1,22 @@
+{
+  "name": "blankslate-child",
+  "version": "1.0.0",
+  "description": "IMPORTANT - PLEASE READ: http://tidythemes.com/concept/",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-cli": "^2.0.1",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-typescript": "^3.2.4",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0",
+    "run-sequence": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

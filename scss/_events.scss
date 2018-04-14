@@ -1,0 +1,153 @@
+.events-menu {
+  margin: 25px auto;
+}
+
+.events-archive .entry-content, .events-archive .entry-header {
+  width: 100%;
+}
+
+#tribe-events-bar {
+  display: none;
+}
+
+.custom-events-bar {
+  background-color: $offwhite;
+  border-radius: 25px;
+  margin-bottom: 50px;
+}
+
+.custom-events-bar-body {
+  padding: 25px 0;
+
+  >div {
+    text-align: center;
+  }
+
+  span {
+    color: $blue;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .instructions {
+    font-weight: 300;
+    color: $blue;
+  }
+}
+
+.events-month {
+  .message {
+    color: $blue;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 25px 0 50px 0;
+  }
+}
+
+.tribe-events-notices {
+  background-color: $yellow;
+  color: $blue;
+  text-shadow: none;
+  border: none;
+}
+
+#tribe-events-content table.tribe-events-calendar {
+  border: none;
+}
+
+.tribe-events-calendar thead tr th {
+  background-color: $blue;
+  font-family: $arial;
+  color: $white;
+  border-left: none;
+  border-right: none;
+
+  &:first-child {
+    border-radius: 10px 0 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 10px 0 0;
+  }
+}
+
+#tribe-events .tribe-events-button, #tribe-events .tribe-events-button:hover, #tribe_events_filters_wrapper input[type=submit], .tribe-events-button, .tribe-events-button.tribe-active:hover, .tribe-events-button.tribe-inactive, .tribe-events-button:hover, .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-], .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
+  background-color: $pink;
+}
+
+.tribe-events-calendar div[id*=tribe-events-daynum-], .tribe-events-calendar div[id*=tribe-events-daynum-] a {
+  color: $blue;
+}
+
+.tribe-events-ical {
+  display: none !important;
+}
+
+.tribe-events-back {
+  margin-top: 25px;
+}
+
+#tribe-events-content {
+  padding-top: 25px;
+}
+
+.tribe-events-page-title {
+  color: $blue;
+}
+
+.tribe-events-calendar td div[id*=tribe-events-daynum-], .tribe-events-calendar td div[id*=tribe-events-daynum-] a {
+  color: $blue;
+}
+
+.tribe-events-othermonth .tribe-events-month-event-title, .tribe-events-othermonth div[id*=tribe-events-daynum-] {
+  opacity: 1;
+}
+
+#tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.tribe-events-month-event-title {
+  padding: 5px 8px;
+  border:1px solid $blue;
+  position: relative;
+  border-radius: 50vh;
+  transition: .3s;
+
+  &:hover {
+    filter: brightness(80%);
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  &::after {
+    content:'\0203A';
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: -2px;
+    font-size: 1.5rem;
+  }
+}
+
+.events-archive.events-gridview #tribe-events-content table .type-tribe_events {
+  border-bottom: none;
+}
+
+.tribe-events-day .tribe-events-day-time-slot h5 {
+  background-color: $pink;
+}
+
+.tribe-events-list .tribe-events-list-event-title {
+  margin-bottom: 25px;
+}
+
+.tribe-events-sub-nav li a, .tribe-events-sub-nav li a:hover, .tribe-events-sub-nav li a:visited {
+  color: $blue;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.tribe-events-back {
+  z-index: 3;
+  position: relative;
+}

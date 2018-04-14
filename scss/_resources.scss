@@ -1,0 +1,171 @@
+.resource-cards {
+  padding: 25px 0;
+}
+
+.toggle-row {
+  padding: 25px 0;
+  background-color: $offwhite;
+  margin-top: 25px;
+  z-index: 2;
+  position: relative;
+
+  .tag-meta {
+    p {
+      color: $blue;
+    }
+  
+    em {
+      color: $pink;
+    }
+  
+    a {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      display: block;
+    }
+  }
+
+  .dropdown {
+    margin: 10px 15px 10px 0;
+  }
+
+  .dropdown-toggle {
+    padding: 15px;
+    background-color: $white;
+    border-radius: 50vh;
+    outline: none;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.resource-card {
+  border-radius: 25px;
+  box-shadow: 0px 3px 10px $offwhite;
+  border:1px solid $shadow;
+  padding: 25px;
+  margin: 0 25px 25px 25px;
+
+  >.row div:first-child {
+    margin-bottom: 15px;
+  }
+
+  a {
+    transition: 0.3s;
+    display: block;
+    color: $blue;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+
+  h4 {
+    color: $purple;
+  }
+
+  p {
+    color: $blue;
+  }
+
+  img {
+    max-width: 50px;
+    float: left;
+    margin-right: 5px;
+    max-height: 55px;
+  }
+
+  .phone-icon {
+    padding:0 8px;
+  }
+}
+
+.resource-toggle {
+  width: 160px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 15px 10px 0;
+  border-radius: 50vh;
+  position: relative;
+  transition: 0.3s;
+
+  p {
+    margin: 0;
+  }
+  
+  span {
+    position: absolute;
+    height: 100%;
+    width: 51px;
+    border-radius: 50%;
+    top: 0;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+
+  &.on {
+    background-color: $blue;
+    justify-content: flex-start;
+    color: $white;
+
+    span {
+      background-color: $yellow;
+      right: -1px;
+    }
+  }
+
+  &.off {
+    background-color: $blue;
+    color: $grey;
+    justify-content: flex-end;
+
+    span {
+      background-color: $white;
+      animation-name: offAnimation;
+      animation-duration: 0.5s;
+      right: calc(100% - 50px);
+    }
+  }
+}
+
+.cards {
+  padding-top: 25px;
+  position: relative;
+
+  h2 {
+    width: 100%;
+    margin-bottom: 25px;
+    color: $blue;
+  }
+}
+
+.cards-loading-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 250px;
+  }
+}
+
+
+@keyframes offAnimation {
+  from {right: 0}
+  to {right: calc(100% - 50px)}
+}

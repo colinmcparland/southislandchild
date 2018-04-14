@@ -1,0 +1,27 @@
+.about-landing {
+  padding-top: 25px;
+  margin-bottom: 35px;
+}
+
+.page-template-about {
+  p, h2, h1 {
+    color: $blue;
+  }
+
+  img:not(.logo) {
+    height: auto;
+  }
+
+  .about-flex-container {
+
+    >div {
+      width: 100%;
+    }
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+}
+

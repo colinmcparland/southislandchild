@@ -1,0 +1,228 @@
+.home-landing {
+  padding-top: 25px;
+  overflow: hidden;
+
+  .landing {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 125px;
+
+    h3 {
+      font-size: 4rem;
+      color: $pink;
+    }
+    
+    p {
+      font-size: 1.8rem;
+      color: $blue;
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: $white;
+      background-color: $teal;
+      border:5px solid $yellow;
+      padding: 18px 35px;
+      border-radius: 20px;
+      font-size: 1.4rem;
+      display: block;
+      cursor: pointer;
+      width: 80%;
+      margin: 0 auto;
+
+      img {
+        height: 25px;
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .family {
+      width: 200px;
+      float: right;
+    }
+  }
+}
+
+.home-instructions {
+  background-color: $blue;
+  padding: 120px 15px 125px 15px;
+  text-align: center;
+
+  h3 {
+    font-size: 4rem;
+    color: $white;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  >div {
+    position: relative;
+  }
+  img {
+    float: left;
+    width: 150px;
+  }
+
+  .arrow {
+    width: 100%;
+    height: auto;
+    margin-top: -50px;
+    right: 50px;
+    position: absolute;
+    max-height: 300px;
+    width: auto;
+  }
+
+  .steps {
+    padding-top: 50px;
+
+    span {
+      display: block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left top;
+    }
+
+    >div {
+      &:first-child span {
+        background-image: url('/wp-content/uploads/2018/03/South-Island-Child-home-page-1.png');
+      }
+
+      &:nth-child(2) span {
+        background-image: url('/wp-content/uploads/2018/03/South-Island-Child-home-page-2.png');
+      }
+
+      &:nth-child(3) span {
+        background-image: url('/wp-content/uploads/2018/03/South-Island-Child-home-page-3-1.png');
+      }
+
+      &:nth-child(4) span {
+        background-image: url('/wp-content/uploads/2018/03/South-Island-Child-home-page-4.png');
+      }
+    }
+
+    p {
+      padding: 0 15px;
+      position: relative;
+      font-size: 1.8rem;
+      color: $white;
+      z-index: 2;
+      line-height: 2.5rem;
+      margin-bottom: 25px;
+    }
+
+    a {
+      background-color: $teal;
+      color: $white;
+      border: 5px solid $yellow;
+      border-radius: 10px;
+      display: block;
+      width: calc(100% - 30px);
+      padding: 12px 0;
+      z-index: 2;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    input {
+      background-color: transparent;
+      display: block;
+      width: calc(100% - 30px);
+      border: 5px solid $white;
+      color: $white;
+      border-radius: 12px;
+      padding: 12px;
+      outline: none;
+      width: calc(100% - 30px);
+      margin: 0 auto;
+    }
+
+    ::placeholder {
+      color: $white;
+    }
+  }
+}
+
+.home-needs, .home-needs-popover {
+  padding: 125px 0;
+
+  h3 {
+    font-size: 3.5rem;
+    color: $blue;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .circle {
+    cursor: pointer;
+    border-radius: 100%;
+    border:5px solid;
+    text-align: center;
+    color: $white;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    max-width: 200px;
+    margin: 0 auto;
+    transition: 0.3s;
+    line-height: 1.3;
+    font-size: 1.4rem;
+    margin-top: 50px;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+
+  .sooke {
+    background-color: $blue;
+    border-color: $pink;
+  }
+
+  .victoria {
+    background-color: $green;
+    border-color: $purple;
+  }
+
+  .peninsula {
+    background-color: $pink;
+    border-color: $teal;
+  }
+}
+
+
+.home-needs-popover {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: $white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  .close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 3rem;
+    color: $blue;
+    line-height: 1;
+    cursor: pointer;  
+    transition: 0.3s;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+}
