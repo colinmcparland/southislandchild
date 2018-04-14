@@ -19,11 +19,11 @@ ssh -t tinybird.ca "
 # SSH into SIC site then:
 #   Go to theme root
 #   Remove all files
-# ssh southislandchild.ca '
-#   cd www/wp-content/themes;
-#   rm -r blankslate-child;
-#   git clone https://github.com/colinmcparland/southislandchild.git blankslate-child;
-#   chmod -R 755 blankslate-child;
-#   ls blankslate-child;
-#   exit;
-# ';
+ssh southislandchild.ca '
+  cd www/wp-content/themes;
+  rm -r blankslate-child;
+  git clone https://github.com/colinmcparland/southislandchild.git blankslate-child;
+  chmod -R 755 blankslate-child;
+  ls blankslate-child;
+  exit;
+';
