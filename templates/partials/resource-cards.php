@@ -16,7 +16,7 @@
 <div class="toggle-row">
   <div class="container">
     <div class="row">
-            <?
+    <?
       if($circle) {
         ?>
         <div class="col-12 tag-meta">
@@ -30,7 +30,17 @@
         </div>
         <?
       }
-      ?>
+    ?>
+
+    <?
+      if($tag == -1) {
+        ?>
+        <div class="col-12 tag-meta">
+          <p>There were no resources related to your query.</p> 
+        </div>
+        <?
+      }
+    ?>
 
       <div class="col-12">
         <p>Sort by</p>
@@ -79,7 +89,7 @@
       $querystr .= '&meta_key=location&meta_value=' . strtolower($loc);
     }
 
-    if($tag) {
+    if($tag && $tag != -1) {
       $querystr .= '&tag__in=' . $tag;
 
       //  If there are tags set in the URL, place a hidden div indicating it so JS can filter properly

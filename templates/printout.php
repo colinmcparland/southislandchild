@@ -27,11 +27,17 @@ get_header();
 <script>
 
 (function($) {
+  var count = 0;
   $.each(localStorage, function(key, value) {
+    count++;
     if(key.indexOf('resource-') > -1) {
       $('.printout-cards').append(value);
     }
   });
+
+  if(count === 0) {
+    $('.printout-cards').append("<h2>You haven't saved any resources yet.  Click the printer icon on a resource card to save it to this page, where you can print them all at once.</h2><img style='display: block; margin-top: 25px;' src='/wp-content/uploads/2018/04/fave.png' /><a style='display: block; margin-top: 25px; width: 100%;' href='" + document.referrer + "'><h2>Go back ></h2></a>");
+  }
 
   $('.website').each(function() {
     var link = $(this).find('a').attr('href');

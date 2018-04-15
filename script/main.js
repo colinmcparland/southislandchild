@@ -260,7 +260,11 @@
           action: 'get_tags_list',
           tags: content
         }
-      }).done(function(data) {
+      }).done(function(data) { 
+        if(data == '') {
+          data = -1;
+        }
+        
         location.href = location.origin + '/resources?tag=' + data;
       });
 
