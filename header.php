@@ -15,7 +15,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="loading-overlay">
-  <video src='/wp-content/uploads/2018/04/Loop_Small-1.mp4' autoplay loop muted playsinline poster="://dummyimage.com/320x240/ffffff/fff"></video>
+  <img style='width: 250px; margin-bottom: 25px;' src="/wp-content/uploads/2018/02/South-Island-Child-logo.png" alt="South Island Child Logo">
   <h2>Loading...</h2>
 </div>
 <div class="wrapper">

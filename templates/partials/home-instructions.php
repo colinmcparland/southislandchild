@@ -12,9 +12,9 @@
   <div class="row steps justify-content-center">
     <div class="col-lg-3 col-sm-6 col-10">
       <span>
-        <p>Use our community calendar to find local events</p>
+        <p>Use our calendar to find local drop-ins</p>
       </span>
-      <a href='/events'>Events calendar</a>
+      <a href='/events'>Drop-in calendar</a>
     </div>
     <div class="col-lg-3 col-sm-6 col-10">
       <span>

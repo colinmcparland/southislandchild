@@ -2,8 +2,8 @@
   <div class="col-6 col-md-4">
     <a href="/">
       <div class="logo">
-        <video src="/wp-content/uploads/2018/04/Intro-comp.mp4" class='intro' muted playsinline poster="://dummyimage.com/320x240/ffffff/fff"></video>
-        <video src="/wp-content/uploads/2018/04/Loop_Small-1.mp4" class='loop' loop muted playsinline poster="://dummyimage.com/320x240/ffffff/fff"></video>
+        <video src="/wp-content/uploads/2018/04/Intro-comp.mp4" class='intro' muted playsinline poster="/wp-content/uploads/2018/04/poster.png"></video>
+        <video src="/wp-content/uploads/2018/04/Loop_Small-1.mp4" class='loop' loop muted playsinline poster="/wp-content/uploads/2018/04/poster.png"></video>
       </div>
     </a>
   </div>
