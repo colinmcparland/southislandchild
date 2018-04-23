@@ -22,6 +22,10 @@ a {
   }
 }
 
+.wrapper {
+  overflow: hidden;
+}
+
 .alert-container {
   display: none;
   position: fixed;
@@ -121,11 +125,11 @@ a {
     z-index: 0;
     // position: absolute;
     top: 0;
+    margin-top: -38px;
 
     &:first-child {
       width: 441px;
       margin-left: 1px;
-      margin-top: -38px;
     }
 
     &:nth-child(2) {
