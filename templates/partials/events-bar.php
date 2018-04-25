@@ -5,18 +5,18 @@
         <span>EVENTS IN:</span>
         <select class='custom-event-bar-month'>
           <option></option>
-          <option value='January <? echo date('Y'); ?>'>January</option>
-          <option value='February <? echo date('Y'); ?>'>February</option>
-          <option value='March <? echo date('Y'); ?>'>March</option>
-          <option value='April <? echo date('Y'); ?>'>April</option>
-          <option value='May <? echo date('Y'); ?>'>May</option>
-          <option value='June <? echo date('Y'); ?>'>June</option>
-          <option value='July <? echo date('Y'); ?>'>July</option>
-          <option value='August <? echo date('Y'); ?>'>August</option>
-          <option value='September <? echo date('Y'); ?>'>September</option>
-          <option value='October <? echo date('Y'); ?>'>October</option>
-          <option value='November <? echo date('Y'); ?>'>November</option>
-          <option value='December <? echo date('Y'); ?>'>December</option>
+          <option value='01/01/<? echo date('Y'); ?>'>January</option>
+          <option value='02/01/<? echo date('Y'); ?>'>February</option>
+          <option value='03/01/<? echo date('Y'); ?>'>March</option>
+          <option value='04/01/<? echo date('Y'); ?>'>April</option>
+          <option value='05/01/<? echo date('Y'); ?>'>May</option>
+          <option value='06/01/<? echo date('Y'); ?>'>June</option>
+          <option value='07/01/<? echo date('Y'); ?>'>July</option>
+          <option value='08/01/<? echo date('Y'); ?>'>August</option>
+          <option value='09/01/<? echo date('Y'); ?>'>September</option>
+          <option value='10/01/<? echo date('Y'); ?>'>October</option>
+          <option value='11/01/<? echo date('Y'); ?>'>November</option>
+          <option value='12/01/<? echo date('Y'); ?>'>December</option>
         </select>
       </div>
       <div class="col-12 col-sm-6 col-md-4">
