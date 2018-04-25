@@ -4,14 +4,20 @@ function theme_enqueue_custom_scripts() {
 
   $theme_url = get_stylesheet_directory_uri();
   /*  Scripts  */
-  wp_register_script( 'main-script',  $theme_url.'/script/main.js', "1", true);
+  wp_register_script( 'main-script',  $theme_url.'/script/main.js', array('jquery'), "1");
   wp_enqueue_script( 'main-script' );
+
+  wp_register_script( 'popper',  $theme_url.'/script/popper.min.js', array('jquery'), "1");
+  wp_enqueue_script( 'popper' );
+
+  wp_register_script( 'bootstrap',  $theme_url.'/script/bootstrap.min.js', array('jquery'), "1");
+  wp_enqueue_script( 'bootstrap' );
 
   wp_register_style('main', get_stylesheet_uri());
   wp_enqueue_style('main');
 
   //  Since were using jquery slim to make bootstrap happy
-  wp_deregister_script('jquery');
+  // wp_deregister_script('jquery');
 
 }
 
@@ -56,22 +62,33 @@ function get_resource_card_info() {
     }
   }
 
-  $querystr ='posts_per_page=-1&post_type=resource';
+  $query_params['posts_per_page'] = -1;
+  $query_params['post_type'] = 'resource';
 
   if($tags) {
-    $querystr .= '&tag__in=' . $tags;
+    $query_params['tag__in'] =  $tags;
   }
 
-  query_posts($querystr);
+  if($location) {
+      $query_params['meta_query'] = array(
+        array(
+          'key' => 'location',
+          'value' => $location,
+          'compare' => 'LIKE'
+        )
+      );
+    }
+
+  query_posts($query_params);
 
   while(have_posts()) :
   
     the_post();
 
-    //  Check if this is in the selected location
-    if($location && strpos(strtolower(get_field('location')), $location) === false) {
-      // echo $location . ' not in ' . get_field('location');
-    } else {
+    // //  Check if this is in the selected location
+    // if($location && strpos(strtolower(get_field('location')), $location) === false) {
+    //   // echo $location . ' not in ' . get_field('location');
+    // } else {
       // echo $location . ' in ' . get_field('location');
       $this_post = array(
         'id' => get_the_ID(),
@@ -93,7 +110,7 @@ function get_resource_card_info() {
       } else {
         array_push($ret, $this_post);
       }
-    }
+    // }
   
   endwhile;
 

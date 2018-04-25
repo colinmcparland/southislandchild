@@ -2,8 +2,14 @@
   <div class="col-6 col-md-4">
     <a href="/">
       <div class="logo">
-        <video src="/wp-content/uploads/2018/04/Intro-comp.mp4" class='intro' muted playsinline poster="/wp-content/uploads/2018/04/poster.png"></video>
-        <video src="/wp-content/uploads/2018/04/Loop_Small-1.mp4" class='loop' loop muted playsinline poster="/wp-content/uploads/2018/04/poster.png"></video>
+        <video  class='intro' muted playsinline poster="/wp-content/uploads/2018/04/poster.png">
+          <source src="/wp-content/uploads/2018/04/Intro-comp.mp4">
+          <source src="/wp-content/uploads/2018/04/Intro-comp.webm">
+        </video>
+        <video class='loop' loop muted playsinline poster="/wp-content/uploads/2018/04/poster.png">
+          <source src="/wp-content/uploads/2018/04/Loop_Small-1.mp4">
+          <source src="/wp-content/uploads/2018/04/Loop_Small-1.webm">
+        </video>
       </div>
     </a>
   </div>

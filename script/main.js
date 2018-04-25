@@ -118,17 +118,6 @@
     }
   }
 
-  function handleCircleClick(e) {
-    var loc = e.currentTarget;
-    
-    if(loc.hasClass('peninsula')) {
-
-    } else if(loc.hasClass('sooke')) {
-
-    } else if(loc.hasClass('victoria')) {
-
-    }
-  }
 
   function showHomeNeedsPopover() {
     $('.home-needs-popover').fadeIn(function()  {
@@ -311,17 +300,13 @@
 
     })
 
-    if(localStorage.getItem('date') != null) {
-      $('.custom-event-bar-month').val(localStorage.getItem('date'));
-    }
+    // if(localStorage.getItem('date') != null) {
+    //   $('.custom-event-bar-month').val(localStorage.getItem('date'));
+    // }
 
-    if(localStorage.getItem('loc') != null) {
-      $('.custom-event-bar-location').val(localStorage.getItem('loc'));
-    }
-
-    $('.circle').on('click', function(e) {
-      handleCircleClick(e);
-    });
+    // if(localStorage.getItem('loc') != null) {
+    //   $('.custom-event-bar-location').val(localStorage.getItem('loc'));
+    // }
 
     $('.all-programmes').on('click', function() {
       showHomeNeedsPopover();
@@ -364,29 +349,33 @@
 
 
     $('.custom-event-bar-month').on('change', function()  {
-      $('#tribe-bar-date').val($(this)[0].value);
-      localStorage.setItem('date', $(this)[0].value);
+      console.log('change');
+      var selectedDate = $(this)[0].value;
+      console.log(selectedDate);
+      //  Update datepicker
+      $("#tribe-bar-date").bootstrapDatepicker('setDate', new Date(selectedDate));
+      // localStorage.setItem('date', $(this)[0].value);
       $('.tribe-bar-submit input').trigger('click');
     })
 
-    $('.custom-event-bar-month').on('blur', function()  {
-      $('#tribe-bar-date').val($(this)[0].value);
-      localStorage.setItem('date', $(this)[0].value);
-      $('.tribe-bar-submit input').trigger('click');
-    })
+    // $('.custom-event-bar-month').on('blur', function()  {
+    //   $('#tribe-bar-date').val($(this)[0].value);
+    //   localStorage.setItem('date', $(this)[0].value);
+    //   $('.tribe-bar-submit input').click();
+    // })
 
     $('.custom-event-bar-location').on('change', function()  {
       $('#tribe-bar-geoloc').val($(this)[0].value);
-      localStorage.setItem('loc', $(this)[0].value);
+      // localStorage.setItem('loc', $(this)[0].value);
       $('.tribe-bar-submit input').trigger('click');
     })
 
-    $('.custom-event-bar-location').on('blur', function()  {
-      console.log('blur');
-      $('#tribe-bar-geoloc').val($(this)[0].value);
-      localStorage.setItem('loc', $(this)[0].value);
-      $('.tribe-bar-submit input').trigger('click');
-    })
+    // $('.custom-event-bar-location').on('blur', function()  {
+    //   console.log('blur');
+    //   $('#tribe-bar-geoloc').val($(this)[0].value);
+    //   localStorage.setItem('loc', $(this)[0].value);
+    //   $('.tribe-bar-submit input').trigger('click');
+    // })
 
     $(document).on('click', '.mail a', function(e) {
       e.preventDefault();

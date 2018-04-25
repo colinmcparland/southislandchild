@@ -1,7 +1,8 @@
 <?
-  $loc = $_GET['location'];
-  $tag = $_GET['tag'];
-  $circle_id = $_GET['id'];
+  $loc = array_key_exists('location', $_GET) ? $_GET['location'] : '';
+  $tag = array_key_exists('tag', $_GET) ? $_GET['tag'] : '';
+  $circle_id = array_key_exists('id', $_GET) ? $_GET['id'] : '';
+  $circle = '';
 
   if($circle_id) {
     $circle = get_post($circle_id);
@@ -83,14 +84,23 @@
 <div class="container cards">
   <div class="row justify-content-center cards">
   <?
-    $querystr = 'posts_per_page=-1&post_type=resource';
+    $query_params['posts_per_page'] = -1;
+    $query_params['post_type'] = 'resource';
 
     if($loc) {
-      $querystr .= '&meta_key=location&meta_value=' . strtolower($loc);
+      $query_params['meta_query'] = array(
+        array(
+          'key' => 'location',
+          'value' => $loc,
+          'compare' => 'LIKE'
+        )
+      );
     }
 
+
+
     if($tag && $tag != -1) {
-      $querystr .= '&tag__in=' . $tag;
+      $query_params['tag__in'] = $tag;
 
       //  If there are tags set in the URL, place a hidden div indicating it so JS can filter properly
       echo <<<EOT
@@ -98,7 +108,7 @@
 EOT;
     }
 
-    query_posts($querystr);
+    query_posts($query_params);
   
     while(have_posts()) :
       the_post();

@@ -49,7 +49,7 @@
   <div class="container-fluid credits">
     <div class="row justify-content-center">
       <div class="col-6" style='text-align: right;'>
-         &copy; <? echo date(Y); ?> South Island Child
+         &copy; <? echo date('Y'); ?> South Island Child
       </div>
       <div class="col-6" style='text-align: left;'>
         Website by&nbsp;<a href="//riskcreative.com" target="_blank">Risk Creative</a>
