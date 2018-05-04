@@ -175,10 +175,10 @@
     var h = 0;
 
     $(paragraphs).each(function() {
-      if($(this).innerHeight() > h) {
-        h = $(this).css('height');
+      if($(this).outerHeight() > h) {
+        h = $(this).outerHeight();
       }
-    })
+    });
 
     paragraphs.css('height', h);
   }
@@ -342,7 +342,7 @@
       area.shift();
       area = area.join('-');
       var top = $('.'+area).offset().top;
-      $('document, html').animate({
+      $('html, body').animate({
         scrollTop: top
       }, 1000);
     });
