@@ -14,6 +14,10 @@
   background-color: $offwhite;
   border-radius: 25px;
   margin-bottom: 50px;
+
+  select {
+    max-width: 100%;
+  }
 }
 
 .custom-events-bar-body {

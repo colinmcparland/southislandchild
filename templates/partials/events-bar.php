@@ -23,7 +23,7 @@
         <span>LOCATION:</span>
         <select class='custom-event-bar-location'>
           <option></option>
-          <option value='Central Saanich, BC, Canada'>Central Saanich</option>
+          <option value='Central Saanich, BC, Canada'>Brentwood Bay/Saanichton/Central Saanich</option>
           <option value='Colwood, BC, Canada'>Colwood</option>
           <option value='Esquimalt, BC, Canada'>Esquimalt</option>
           <option value='Highlands, BC, Canada'>Highlands</option>
