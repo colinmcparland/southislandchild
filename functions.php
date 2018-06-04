@@ -264,3 +264,15 @@ class Events_Admin_List__Remove_Child_Events {
     }
 }
 new Events_Admin_List__Remove_Child_Events;
+
+
+//  Function to add a cookie indicating the user wants to hide the popup video
+add_action( 'wp_ajax_set_popup_cookie', 'set_popup_cookie' );
+add_action( 'wp_ajax_nopriv_set_popup_cookie', 'set_popup_cookie' );
+
+function set_popup_cookie() {
+  $cookie_name = "popup_cookie";
+  $cookie_value = 1;
+  echo setcookie($cookie_name, $cookie_value, time() + (86400 * 30), COOKIEPATH, COOKIE_DOMAIN); // 86400 = 1 day
+  die();
+}

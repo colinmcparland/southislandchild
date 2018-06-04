@@ -19,22 +19,11 @@
   <h2>Loading...</h2>
 </div>
 
-<!-- <div class='video-overlay'>
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12">
-        <h2>Welcome to South Island Child</h2>
-        <h4>How to use this website</h4>
-      </div>
-      <div class="col-12">
-        <h4>You can view this video again by clicking 'view video' on the website footer.</h4>
-        <div class="row justify-content-center">
-          <div class="col-auto">Close</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
+<?
+if(!isset($_COOKIE['popup_cookie'])) {
+  include('templates/partials/video-overlay.php'); 
+}
+?>
 
 <div class="wrapper">
 <header id="header" role="banner">

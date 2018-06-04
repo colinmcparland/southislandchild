@@ -224,6 +224,53 @@
     }
   }
 
+  /**
+   * Function that resizes the video prompt circles
+   */
+  function resizeVideoPromptCircles() {
+    if($('.video-overlay').length) {
+      $('.video-prompt-circle').each(function() {
+        var w = $(this).innerWidth();
+        $(this).css('height', w);
+      });
+    }
+  }
+
+  /**
+   * Function to close the video overlay
+   */
+  function closeVideoOverlay() {
+    if($('.video-overlay').length) {
+      $('.video-overlay').fadeOut();
+      $('.video-overlay iframe').remove();
+
+      $.ajax({
+        url: '/wp-admin/admin-ajax.php',
+        type: 'POST',
+        data: {
+          action: 'set_popup_cookie'
+        },
+      })
+      .done(function(data) {
+        console.log(data);
+      })
+      .fail(function() {
+        console.log("cookie set error");
+      });
+    }
+  }
+
+  /**
+   * Function to reveal the video in the video overlay
+   */
+  function showVideoOverlayIframe() {
+    if($('.video-overlay').length) {
+      $('.video-overlay .video-prompt-container').fadeOut(function() {
+        $('.video-overlay iframe').fadeIn();
+      });
+    }
+  }
+
 
 
   $(document).ready(function()  {
@@ -231,6 +278,15 @@
     highlightMenuItem();
     logoVideoListener();
     updatePrintOutMessage();
+    resizeVideoPromptCircles();
+
+    $('.video-overlay .closer').click(function() {
+      closeVideoOverlay();
+    })
+
+    $('.video-overlay .yes').click(function() {
+      showVideoOverlayIframe();
+    });
 
 
 

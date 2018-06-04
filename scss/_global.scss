@@ -254,7 +254,7 @@ a {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: $darkshadow;
+  background-color: $shadow;
   z-index: 300;
   display: flex;
   align-items: center;
@@ -263,5 +263,58 @@ a {
     color: $white;
     text-align: center;
     text-shadow: 1px 1px 2px $grey;
+  }
+
+  iframe {
+    display: none;
+    max-width: 100%;
+  }
+
+  .closer:not(.d-flex) {
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    transition: .3s;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+}
+
+.video-prompt-container {
+  border-radius: 50%;
+  background-color: $yellow;
+  padding: 50px;
+
+  h2 {
+    color: $blue;
+  }
+
+  .choices {
+    padding-top: 25px;
+    * {
+      color: $white;
+    }
+    >div {
+      h2 {
+        color: $white;
+      }
+      border-radius: 50%;
+      cursor: pointer;
+      background-color: $purple;
+      width: 100px;
+      transition: .3s;
+      &:first-child {
+        background-color: $teal;
+      }
+
+      &:hover {
+        filter: brightness(80%);
+      }
+    }
   }
 }
