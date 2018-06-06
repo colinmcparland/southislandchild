@@ -278,7 +278,6 @@
     highlightMenuItem();
     logoVideoListener();
     updatePrintOutMessage();
-    resizeVideoPromptCircles();
 
     $('.video-overlay .closer').click(function() {
       closeVideoOverlay();
@@ -287,6 +286,12 @@
     $('.video-overlay .yes').click(function() {
       showVideoOverlayIframe();
     });
+
+    setTimeout(function() {
+      console.log('timepout');
+      $('.video-overlay').fadeIn().css('display', 'flex');
+      resizeVideoPromptCircles();
+    }, 30000);
 
 
 

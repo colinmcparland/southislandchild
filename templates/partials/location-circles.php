@@ -1,7 +1,7 @@
 <div class="col-12 col-md-3">
   <a href="/resources?location=sooke">
     <div class='circle sooke'>
-      Sooke/<br />Westshore
+      Sooke/<br />West Shore
     </div>
   </a>
 </div>

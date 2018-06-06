@@ -53,7 +53,7 @@
           if($loc == 'victoria') {
             echo 'Victoria';
           } else if($loc == 'sooke') {
-            echo 'Sooke/Westshore';
+            echo 'Sooke/West Shore';
           } else if ($loc == 'peninsula') {
             echo 'Peninsula';
           } else {

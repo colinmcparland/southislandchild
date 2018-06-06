@@ -43,7 +43,7 @@ if(!isset($_COOKIE['popup_cookie'])) {
       </a>
     </div>
     <div class="col-lg-5 col-12 order-1 order-md-1 order-lg-2 message">
-      Virtual home of the Sooke/Westshore, Victoria and Peninsula Early Years Centres 
+      Virtual home of the Sooke/West Shore, Victoria and Peninsula Early Years Centres 
     </div>
     <div class="col-lg-2 col-md-6 col-12 order-2 order-md-3 order-lg-3">
       <form class='header-search'>
