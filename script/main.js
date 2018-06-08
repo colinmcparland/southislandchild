@@ -291,7 +291,7 @@
       console.log('timepout');
       $('.video-overlay').fadeIn().css('display', 'flex');
       resizeVideoPromptCircles();
-    }, 100);
+    }, 30000);
 
 
 
