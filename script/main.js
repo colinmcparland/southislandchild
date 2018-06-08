@@ -317,9 +317,8 @@
           data = -1;
         }
 
-        console.log({ data });
         
-        // location.href = location.origin + '/resources?tag=' + data;
+        location.href = location.origin + '/resources?tag=' + data;
       });
 
     })
