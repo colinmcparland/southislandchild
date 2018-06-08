@@ -291,15 +291,17 @@
       console.log('timepout');
       $('.video-overlay').fadeIn().css('display', 'flex');
       resizeVideoPromptCircles();
-    }, 30000);
+    }, 100);
 
 
 
     $('.header-search, .instruction-search').on('submit', function(e) {
       $('html, body').css('cursor', 'wait');
       e.preventDefault();
-      var content = $(this).find('input').val();
-      content = content.replace(/\W+/g,",");
+      var content = $(this).find('input').val() + ',';
+
+      //  If there are spaces in the keyword, 
+      content += content.replace(/\W+/g,",");
 
       console.log(content);
 
@@ -314,8 +316,10 @@
         if(data == '') {
           data = -1;
         }
+
+        console.log({ data });
         
-        location.href = location.origin + '/resources?tag=' + data;
+        // location.href = location.origin + '/resources?tag=' + data;
       });
 
     })
