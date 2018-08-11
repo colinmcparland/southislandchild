@@ -34,11 +34,9 @@
     ?>
 
     <?
-      if($tag == -1) {
+      if(explode(',', $tag)[0] == -1) {
         ?>
-        <div class="col-12 tag-meta">
-          <p>There were no resources related to your query.</p> 
-        </div>
+
         <?
       }
     ?>
@@ -97,20 +95,108 @@
       );
     }
 
+    //  Check if this tag was not found.  If not found, we'll search the post titles for it later.
+    $tags_arr = explode(',', $tag);
 
-
-    if($tag && $tag != -1) {
+    if($tag && $tags_arr[0] != -1) {
       $query_params['tag__in'] = $tag;
-
-      //  If there are tags set in the URL, place a hidden div indicating it so JS can filter properly
-      echo <<<EOT
-        <div style='visibility: hidden; width: 0px; height: 0px;' class='url_tags' data-tags='$tag'></div>
-EOT;
     }
+
+    //  If there are tags set in the URL, place a hidden div indicating it so JS can filter properly
+    echo <<<EOT
+      <div style='visibility: hidden; width: 0px; height: 0px;' class='url_tags' data-tags='$tag'></div>
+EOT;
+
+    //  If we have an unrecognized tag in the search, do a seperate search for matching words in post titles.
+    $tag_in_title_count = 0;
+
+    if($tags_arr[0] == -1) {
+      $missing_tag = $tags_arr[1];
+
+      query_posts($query_params);
+      
+      while(have_posts()) :
+        the_post();
+        $id = get_the_id();
+        $title = get_the_title();
+        $desc = get_the_content();
+        $email = get_field('email');
+        $link = get_field('website');
+        $files = get_field('files');
+        $this_loc = get_field('location');
+        $phone = get_field('phone_number');
+
+        //  Check if the tag is in this post
+        if(strpos(strtolower(get_the_title()), $missing_tag) > -1) {
+          $tag_in_title_count++;
+          $ret = '';
+  
+          $ret .= <<<EOT
+          <div class="col-12 col-lg-5 resource-card">
+            <h4>$title</h4>
+            <p>$desc</p>
+            <div class="row card-meta">
+EOT;
+        
+          if($email) {
+            $ret .= <<<EOT
+              <div class="col-12 email">
+                <a href='#'>
+                  <img src="/wp-content/uploads/2018/02/South-Island-Child-envelope.png" alt="">
+                  $email
+                </a>
+              </div>
+EOT;
+          }
+  
+          if($link) {
+            $ret .= <<<EOT
+              <div class="col-12 col-sm-6 website">
+                <a target='_blank' href='$link'>
+                  <img src="/wp-content/uploads/2018/02/South-Island-Child-web-link-icon.png" alt="">
+                  Visit website
+                </a>
+              </div>
+EOT;
+          }
+  
+          $ret .= <<<EOT
+            <div class="col-12 col-sm-6">
+              <a href="#" class='fave' data-id='$id'>
+                <img src="/wp-content/uploads/2018/02/South-Island-Child-printer-icon.png" alt="">
+                Save favourite resources to one single page to print
+              </a>
+            </div>
+EOT;
+        
+          if($phone) {
+            $ret .= <<<EOT
+              <div class="col-12 col-sm-6">
+                <a href="tel:$phone">
+                  <img class='phone-icon' src="/wp-content/uploads/2018/04/phone-icon-SIC.png" alt="">
+                  $phone
+                </a>
+              </div>
+EOT;
+          }
+  
+          $ret .= <<<EOT
+            </div>
+          </div>
+EOT;
+  
+          echo $ret;
+        }
+
+      endwhile;
+
+    }
+
+    wp_reset_query();
 
     query_posts($query_params);
   
-    while(have_posts()) :
+    while(have_posts() && $tag_in_title_count == 0) :
       the_post();
       $id = get_the_id();
       $title = get_the_title();

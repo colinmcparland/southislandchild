@@ -5,7 +5,7 @@
       <div class="col-11 col-md-5">
         <div class="row align-items-center video-prompt-container video-prompt-circle">
           <div class="col-12">
-            <h2>Would you like to watch a 2 minute video about how to use this website?</h2>
+            <h2>Would you like to watch a 2-minute video about how to use this website?</h2>
             <div class="row align-items-center justify-content-around choices">
               <div class="col-auto justify-content-center video-prompt-circle d-flex flex-column yes">
                 <h2>YES</h2>

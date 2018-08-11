@@ -55,6 +55,9 @@ function get_resource_card_info() {
 
   $ret = array();
 
+  //  Check if this tag was not found.  If not found, we'll search the post titles for it later.
+  $tags_arr = explode(',', $tags);
+
   if($cats === 'true') {
     $cats_array = array();
     foreach(get_categories() as $category) {
@@ -65,31 +68,68 @@ function get_resource_card_info() {
   $query_params['posts_per_page'] = -1;
   $query_params['post_type'] = 'resource';
 
-  if($tags) {
+  if($tags_arr[0] != -1) {
     $query_params['tag__in'] =  $tags;
   }
 
   if($location) {
-      $query_params['meta_query'] = array(
-        array(
-          'key' => 'location',
-          'value' => $location,
-          'compare' => 'LIKE'
-        )
-      );
-    }
+    $query_params['meta_query'] = array(
+      array(
+        'key' => 'location',
+        'value' => $location,
+        'compare' => 'LIKE'
+      )
+    );
+  }
+
+  //  Do a post query to search for tags in post titles 
+  $tag_in_title_count = 0;
 
   query_posts($query_params);
 
-  while(have_posts()) :
+  while(have_posts()) : the_post();
+
+    $this_post = array(
+      'id' => get_the_ID(),
+      'title' => get_the_title(),
+      'location' => get_field('location'),
+      'category' => get_the_category()[0]->name,
+      'website' => get_field('website'),
+      'email' => get_field('email'),
+      'content' => get_the_content(),
+      'phone' => get_field('phone_number') ? get_field('phone_number') : '',
+    );
+
+    foreach($tags_arr as $tag) {
+      
+      //  Get the slug of this tag
+      if(strpos(strtolower(get_the_title()), $tag) > -1) {
+        $tag_in_title_count++;
+
+        //  If the sort by categories flag is set, divide results into arrays
+        //  Otherwise, put all posts into one array
+        if($cats === 'true') {
+          foreach(get_the_category() as $category) {
+            array_push($cats_array[$category->name], $this_post);  
+          }
+          break;
+        } else {
+          array_push($ret, $this_post);
+          break;
+        }
+      }
+    }
+    
+  endwhile;
+
+  wp_reset_query();
+
+  query_posts($query_params);
+
+  while(have_posts() && $tag_in_title_count == 0) :
   
     the_post();
 
-    // //  Check if this is in the selected location
-    // if($location && strpos(strtolower(get_field('location')), $location) === false) {
-    //   // echo $location . ' not in ' . get_field('location');
-    // } else {
-      // echo $location . ' in ' . get_field('location');
       $this_post = array(
         'id' => get_the_ID(),
         'title' => get_the_title(),
@@ -113,6 +153,7 @@ function get_resource_card_info() {
     // }
   
   endwhile;
+
 
   //  If alphabetical is true, alphabetise
   if($alpha === 'true' && $cats === 'false') { 
@@ -142,7 +183,7 @@ function get_single_resource_card() {
 
   $website = get_field('website', $id);
   $email = get_field('email', $id);
-  $phone = get_field('phone', $id);
+  $phone = get_field('phone_number', $id);
 
   $this_resource = get_post($id);
 

@@ -314,7 +314,7 @@
         }
       }).done(function(data) { 
         if(data == '') {
-          data = -1;
+          data = '-1,' + content;
         }
 
         
@@ -395,6 +395,7 @@
       $('.cards .cards-loading-overlay').fadeIn().css('display', 'flex');
       getPosts($('.alpha').hasClass('on'), $('.cats').hasClass('on'), $('.dropdown .selected').attr('id'), $('.url_tags').data('tags'))
         .done(function(data)  {
+          console.log(data);
           populateResourceCards(data);
           $('.cards .cards-loading-overlay').fadeOut();
           updatePrintOutMessage();

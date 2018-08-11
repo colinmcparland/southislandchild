@@ -35,24 +35,24 @@ if(!isset($_COOKIE['popup_cookie'])) {
   </div>
 </div>
 <div class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-lg-2 col-md-3 col-6 order-3 order-md-2 order-lg-1">
+  <div class="row align-items-center justify-content-between">
+    <div class="col-lg-auto col-md-3 col-6 order-3 order-md-2 order-lg-1">
       <a href='mailto:joanne@snplace.org'>
         <img src="/wp-content/uploads/2018/02/South-Island-Child-envelope.png" alt="Email for help" />
         Email for help
       </a>
     </div>
-    <div class="col-lg-5 col-12 order-1 order-md-1 order-lg-2 message">
+    <div class="col-lg-auto col-12 order-1 order-md-1 order-lg-2 message">
       Virtual home of the Sooke/West Shore, Victoria and Peninsula Early Years Centres 
     </div>
-    <div class="col-lg-2 col-md-6 col-12 order-2 order-md-3 order-lg-3">
+    <div class="col-lg-auto col-md-6 col-12 order-2 order-md-3 order-lg-3">
       <form class='header-search'>
         <img style="margin-right: 15px;" src="/wp-content/uploads/2018/02/search.png" alt="Search Submit" /> 
         <input type="text" name="search" placeholder='Search website'>
         <input type="submit" hidden name="search-submit" />
       </form>
     </div>
-    <div class="col-lg-3 col-md-3 col-sm-6 col-6 print order-4 order-md-4 order-lg-4">
+    <div class="col-lg-auto col-md-3 col-sm-6 col-6 print order-4 order-md-4 order-lg-4">
       <a target="_blank" href='/print'>
         Print saved resources
         <img src='/wp-content/uploads/2018/02/South-Island-Child-printer-icon.png' alt="Print saved resources" />
